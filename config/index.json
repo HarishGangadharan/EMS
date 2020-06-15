@@ -1,0 +1,18 @@
+ {
+  "development" : {
+    "host": "localhost",
+    "user": "root",
+    "password": "password",
+    "database": "EMS_dev"
+  },
+
+  "test" : {
+    "host": "localhost",
+    "user": "root",
+    "password": "password",
+    "database": "EMS_test"
+  }
+ }
+
+
+ 
