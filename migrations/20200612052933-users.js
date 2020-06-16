@@ -17,30 +17,30 @@ exports.up = function(db, callback) {
   db.createTable('employee', {
     id: {
       type: 'int',
-      primaryKey: true
+      primaryKey: true,
     },
     first_name: {
       type: 'string',
-      length: 40
+      length: 40,
     },
     last_name: {
       type: 'string',
-      length: 40
+      length: 40,
     },
     mobile: {
       type: 'int',
-      length: 12
+      length: 12,
     },
     role: {
       type: 'string',
-      length: 15
+      length: 15,
     },
     dob: {
-      type: 'date'
+      type: 'date',
     },
     email: {
       type: 'string',
-      length: 50
+      length: 50,
     },
   }, function(err) {
     if (err) return callback(err);
@@ -52,5 +52,5 @@ exports.down = function(db, callback) {
 };
 
 exports._meta = {
-  "version": 1
+  version: 1,
 };

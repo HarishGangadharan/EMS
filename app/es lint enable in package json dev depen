@@ -1,0 +1,11 @@
+es lint enable in package json dev depen
+2 npm git commit no error
+
+
+postsql
+mysql
+redis
+mongo
+
+
+npm run pretest -- --fix

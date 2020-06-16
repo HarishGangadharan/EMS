@@ -18,15 +18,15 @@ exports.up = function(db, callback) {
   db.createTable('project', {
     id: {
       type: 'int',
-      primaryKey: true
+      primaryKey: true,
     },
     name: {
       type: 'string',
-      length: 40
+      length: 40,
     },
     started_at: {
-      type: 'date'
-    }
+      type: 'date',
+    },
 
   }, function(err) {
     if (err) return callback(err);
@@ -37,5 +37,5 @@ exports.down = function(db, callback) {
   db.dropTable('project', callback);
 };
 exports._meta = {
-  "version": 1
+  version: 1,
 };

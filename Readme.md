@@ -58,6 +58,8 @@ EMS is currently extended with the following packages. Instructions on how to us
 | body-parser | [https://www.npmjs.com/package/body-parser] |
 | helmet | [https://www.npmjs.com/package/helmet] |
 | cors | [https://www.npmjs.com/package/cors] |
+| mocha | [https://www.npmjs.com/package/mocha] |
+| eslint | [https://www.npmjs.com/package/eslint] |
 
 ### Version
   - Node (v12.18.0)
