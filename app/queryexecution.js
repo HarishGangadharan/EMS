@@ -1,14 +1,13 @@
-const connection = require("../config/connection");
+const connection = require('../config/connection');
 
-const executeQuery = (native_query) => {
-  return new Promise((resolve, reject) => {
-    connection.query(native_query, (err, data) => {
-      if (err) return reject(err);
-      resolve(data);
-    });
+const executeQuery = (nativeQuery) => new Promise((resolve, reject) => {
+  // eslint-disable-next-line consistent-return
+  connection.query(nativeQuery, (err, data) => {
+    if (err) return reject(err);
+    resolve(data);
   });
-}
+});
 
 module.exports = {
-  executeQuery 
+  executeQuery,
 };

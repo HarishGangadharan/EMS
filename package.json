@@ -8,7 +8,7 @@
         "start_test": "NODE_ENV=test nodemon app.js",
         "db-migrate-dev": "db-migrate up --config database.js -e dev",
         "db-migrate-test": "db-migrate up --config database.js -e test",
-        "pretest": "eslint --ignore-path .gitignore ."
+        "lint": "eslint ./"
     },
     "dependencies": {
         "body-parser": "1.18.3",
@@ -22,14 +22,15 @@
     },
     "devDependencies": {
         "eslint": "^7.2.0",
-        "eslint-config-strongloop": "^2.1.0",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-import": "^2.21.2",
         "husky": "^4.2.5",
         "mocha": "^8.0.1"
     },
     "husky": {
         "hooks": {
-          "pre-commit": "npm test",
-          "pre-push": "npm test"
+            "pre-commit": "npm run lint",
+            "pre-push": "npm test"
         }
-      }
+    }
 }
