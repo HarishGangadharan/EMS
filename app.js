@@ -3,6 +3,7 @@ const http = require('http');
 const helmet = require('helmet');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 const timestamp = require('./middlewares/timestamp');
 const serverRouter = require('./route');
 
@@ -13,6 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(timestamp);
+
+const dir = './logs';
+if (!fs.existsSync(dir)) {
+  fs.mkdirSync(dir);
+}
 
 process.on('uncaughtException', (err) => {
   // eslint-disable-next-line no-console
