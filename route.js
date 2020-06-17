@@ -4,7 +4,15 @@ const EmployeeController = require('./app/controller/employeecontroller');
 
 router.get('/employee/all', (req, res, next) => {
   EmployeeController.getAll().then(data => {
-    res.send(data)
+    res.send(data);
+  }).catch(err => {
+    res.send(err)
+  });
+});
+
+router.post('/employee/post', (req, res, next) => {
+  EmployeeController.getAll().then(data => {
+    res.send(data);
   }).catch(err => {
     res.send(err)
   });
