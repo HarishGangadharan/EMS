@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const timestamp = require('./middlewares/timestamp');
 const serverRouter = require('./route');
+const logger = require('./config/logger');
 
 const app = express();
 app.use(helmet());
@@ -21,13 +22,17 @@ if (!fs.existsSync(dir)) {
 }
 
 process.on('uncaughtException', (err) => {
-  // eslint-disable-next-line no-console
-  console.log(err);
+  logger.log({
+    message: err,
+    level: 'error',
+  });
 });
 
 process.on('unhandledException', (err) => {
-  // eslint-disable-next-line no-console
-  console.log(err);
+  logger.log({
+    message: err,
+    level: 'error',
+  });
 });
 
 app.use('/', serverRouter);

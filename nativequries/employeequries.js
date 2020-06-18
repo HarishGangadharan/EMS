@@ -1,4 +1,4 @@
-const projectSelectAll = 'select * from project';
+const projectSelectAll = 'select * from projects';
 
 module.exports = {
   projectSelectAll,
