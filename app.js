@@ -16,11 +16,20 @@ app.use(bodyParser.json());
 
 app.use(timestamp);
 
+/**
+ * Create a logs folder if not exist.
+ *
+ */
 const dir = './logs';
 if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir);
 }
 
+/**
+ * Capture all the uncaught exception if it is not handled.
+ *
+ * @param err Error which is occured
+ */
 process.on('uncaughtException', (err) => {
   logger.log({
     message: err,
@@ -28,6 +37,11 @@ process.on('uncaughtException', (err) => {
   });
 });
 
+/**
+ * Capture all the unhandled exception if it is not handled.
+ *
+ * @param err Error which is occured
+ */
 process.on('unhandledException', (err) => {
   logger.log({
     message: err,
